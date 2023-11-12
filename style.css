@@ -1,0 +1,252 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F0F2F5;
+}
+
+/* for main page only */
+
+#banner_parent{
+  height: 360px;
+  overflow: hidden;
+}
+
+#banner img{
+width: 100%;
+aspect-ratio: initial;
+}
+
+.room-section {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 5% 0 5% 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.room-section section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.room-info{
+  margin: 20px; 
+  width: 190px;
+  background-color: white;
+}
+
+.room-info *{
+  background-color: white;
+}
+
+.room-info p{
+  font-size: 12px;
+}
+
+.room-section section picture img{
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+}
+
+.room-section section button{
+  height: 35px;
+  width: 130px;
+  border-radius: 8px;
+  color: white;
+  background-color: #81533C;
+  font-weight: bold;
+}
+
+
+
+/* for calendar only */
+.ognoo_songoh_heseg {
+  display: flex;
+  flex-direction: row; /* Display items horizontally */
+  margin: 40px 200px;
+}
+
+#calendar{
+  width: 45%;
+  height: 100%;   
+}
+
+#calendar *{
+  background-color: white;
+}
+
+.date-container {
+  display: flex;
+  flex-direction: column; /* Display sections vertically */
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.ognoo_songoh_heseg{
+  justify-content: space-around;
+}
+
+.date input{
+  height: 35px;
+  width: 150px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: white;
+  border-style: hidden;
+}
+
+
+
+/* Style for each section */
+.date {
+  display: flex;
+  flex-direction: row; /* Display children horizontally */
+  margin-bottom: 10px; /* Add spacing between sections */
+}
+
+/* Style for the labels in each section */
+.date h4 {
+  margin-right: 10px; /* Add spacing between label and input */
+}
+
+/* Style for the input in each section */
+
+input[type=date]:invalid::-webkit-datetime-edit {
+  color: #6e2626;
+}
+
+
+
+
+/* for order only */
+#roomSelectionContainer {
+  display: flex; /* Make the container a flex container */
+  flex-direction: row; /* Arrange children horizontally */
+  align-items: center; /* Center children vertically */
+  margin: auto 5%;
+  justify-content: space-around;
+}
+
+#roomSelectionContainer *{
+  border-radius: 15px;
+}
+
+#roomSelectionInfo {
+  flex: 0.7 ; /* Expand to take remaining space */
+  display: flex;
+  flex-direction: row; /* Arrange children vertically */
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  margin: 0px;
+}
+
+#roomSelection h4{
+  text-align: center;
+}
+
+#roomSelectionInfo p{
+  width: 25%;
+  background-color: white;
+}
+
+#button-grid div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create a 3-column grid */
+    gap: 10px; /* Add space between buttons */
+    justify-content: center;
+}
+
+#button-grid div button {
+    width: 100%; /* Make buttons take up the full column width */
+    font-size: 20px;
+    background-color: white;
+    border: 1px;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #d4d4d4;
+}
+
+#button-grid div button:hover{
+  background-color:  #ede3df;
+}
+
+.click-element.clicked {
+    background-color: #966C5E; /* Change the text color to brown when clicked */
+    color: white;
+}
+
+#button-grid{
+  width: 30%;
+  
+}
+
+/* function changeColor(element) {
+  element.classList.add('clicked');
+} */
+
+
+
+/* huviin medeelliin heseg */
+#personalInfo {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2% 15% 0px 15%;
+  padding: 0px 5% 0px 5%;
+  border-radius: 30px;
+  background-color: white;
+  font-size: 18px;
+}
+
+#personalInfo h4 {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#personalInfo div {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#personalInfo label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#personalInfo div input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 300px;
+  border-radius: 8px;
+  border-width: 1px;
+}
+
+#personalInfo *{
+  background-color: white;
+}
+
+#orderButton {
+  display: block;
+  margin: 30px auto;
+  width: 400px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: #81533C;
+  color: white;
+}
