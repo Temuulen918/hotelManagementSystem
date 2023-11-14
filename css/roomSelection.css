@@ -120,11 +120,6 @@ input[type=date]:invalid::-webkit-datetime-edit {
   background-color:  #ede3df;
 }
 
-.click-element.clicked {
-    background-color: #966C5E;
-    color: white;
-}
-
 #button-grid{
   width: 30%;
   
