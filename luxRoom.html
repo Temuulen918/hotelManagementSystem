@@ -45,7 +45,7 @@
                 <section id="button-grid">
                     <h4 style="font-size: 20px; margin-bottom: 10px">Өрөөний тоотоо сонгоно уу</h4>
                     <div>
-                        <button>201</button>
+                        <button id="btn201">201</button>
                         <button>202</button>
                         <button>203</button>
                         <button>204</button>
@@ -61,15 +61,18 @@
         
         <div class="ognoo_songoh_heseg">
             <div id="calendar"></div>
-            
+
             <div class="date-container">
+                <h4>Таны сонгосон өрөө: </h4>
+                <h4 id="selectedRoom">201</h4><br>
+
                 <section class="date">
                     <h4 style="margin-right: 40px;">Эхлэх өдөр:</h4>
-                    <input type="date">
+                    <input type="date" id="startDateInput">
                 </section> <br>
                 <section class="date">
                     <h4 style="margin-right: 40px;">Дуусах өдөр:</h4>
-                    <input type="date">
+                    <input type="date" id="endDateInput">
                 </section>
             </div>
         </div>
@@ -78,19 +81,19 @@
             <h4>Хувийн мэдээлэл</h4>
             <div>
                 <p>Овог </p>
-                <input type="text" placeholder="Овогоо оруулна уу">
+                <input type="text" placeholder="Овогоо оруулна уу" id="lname">
             </div>
             <div>
                 <p>Утасны дугаар </p>
-                <input type="tel" placeholder="Утасны дугаараа оруулна уу" maxlength="8" pattern="[0-9]{8}">
+                <input type="tel" placeholder="Утасны дугаараа оруулна уу" maxlength="8" id="phone" >
             </div>
             <div>
                 <p>Нэр </p>
-                <input type="text" placeholder="Нэрээ оруулна уу">
+                <input type="text" placeholder="Нэрээ оруулна уу" id="fname">
             </div>
            <div>
                 <p>Регистерийн дугаар /Паспортын/ </p>
-                <input type="text" placeholder="Регистерээ оруулна уу">
+                <input type="text" placeholder="Регистерээ оруулна уу" id="registerNo">
            </div>
         </section>
         <button id="orderButton">Захиалах</button>

@@ -130,9 +130,9 @@ input[type=date]:invalid::-webkit-datetime-edit {
   
 }
 
-#button-grid button.selected {
-  background-color: #3498db; /* Change this to the desired color */
-  color: #fff; /* Change this to the desired text color */
+#button-grid div button.selected {
+  background-color: #966C5E; /* Change this to the desired color */
+  color: black; /* Change this to the desired text color */
 }
 
 
