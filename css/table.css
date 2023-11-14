@@ -25,12 +25,12 @@
     background-color: #fff;
 }
 
-.search_box button{
+.search_box .search_button{
     background-color:#81533C;
     margin:5px;
     padding:0.5px 30px;
     border: 1px solid white;
-    border-radius: 8px;
+    border-radius: 20px;
     color:#fff;
     letter-spacing: 1px;
     cursor:pointer;
@@ -48,12 +48,13 @@
     display: grid;
     grid-template-columns: 80% 1fr ;
 }*/
+
 .policy-container{
 margin: 20px 200px 20px 200px;
 
 }
 .policy-table {
-    color: grey;
+    color:black;
     text-align: center;
   }
   
@@ -71,22 +72,23 @@ margin: 20px 200px 20px 200px;
   }
   
   .policy {
-    border-radius: 2em;
+    border-radius: 30px;
     background-color: white;
     margin-bottom: 1%;
-    box-shadow: 0 0 5px grey;
+    box-shadow: 0 0 5px rgb(117, 117, 117);
     height: 60px;
 
   }
   .headings span{
     padding: 8px;
     flex-basis: 34%;
-    border-right:1px solid black;
+    border-right:1px solid rgb(141, 140, 140);
   }
+
   .policy span {
     background-color: #fff;
-    flex-basis: 20%;
-    padding: 4px;
+    flex-basis: 40%;
+    padding: 4px; 
   }
   
   a {
@@ -94,13 +96,14 @@ margin: 20px 200px 20px 200px;
     color: #4c4c4c;
   }
   
+
   .button{
     background-color:#81533C;
-    padding: 1px 30px;
-    border: 1px solid white;
-    border-radius: 8px;
+    width: 400px;
+    height: 36px;
+    border: 1px #fff;
+    border-radius: 15px;
     color:#fff;
-    letter-spacing: 1px;
     cursor:pointer;
   }
   
