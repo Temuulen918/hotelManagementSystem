@@ -130,9 +130,10 @@ input[type=date]:invalid::-webkit-datetime-edit {
   
 }
 
-/* function changeColor(element) {
-  element.classList.add('clicked');
-} */
+#button-grid button.selected {
+  background-color: #3498db; /* Change this to the desired color */
+  color: #fff; /* Change this to the desired text color */
+}
 
 
 
