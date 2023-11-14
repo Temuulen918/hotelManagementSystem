@@ -108,7 +108,7 @@ input[type=date]:invalid::-webkit-datetime-edit {
 }
 
 #button-grid div button {
-    width: 100%; /* Make buttons take up the full column width */
+    width: 100%; 
     font-size: 20px;
     background-color: white;
     border: 1px;
@@ -121,7 +121,7 @@ input[type=date]:invalid::-webkit-datetime-edit {
 }
 
 .click-element.clicked {
-    background-color: #966C5E; /* Change the text color to brown when clicked */
+    background-color: #966C5E;
     color: white;
 }
 
@@ -131,8 +131,8 @@ input[type=date]:invalid::-webkit-datetime-edit {
 }
 
 #button-grid div button.selected {
-  background-color: #966C5E; /* Change this to the desired color */
-  color: black; /* Change this to the desired text color */
+  background-color: #966C5E; 
+  color: white; 
 }
 
 
