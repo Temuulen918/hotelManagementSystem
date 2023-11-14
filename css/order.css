@@ -8,69 +8,6 @@
   background-color: #F0F2F5;
 }
 
-/* for main page only */
-
-#banner_parent{
-  height: 360px;
-  overflow: hidden;
-}
-
-#banner img{
-width: 100%;
-aspect-ratio: initial;
-}
-
-.room-section {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  margin: 5% 0 5% 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.room-section section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  background-color: white;
-}
-
-.room-info{
-  margin: 20px; 
-  width: 190px;
-  background-color: white;
-}
-
-.room-info *{
-  background-color: white;
-}
-
-.room-info p{
-  font-size: 12px;
-}
-
-.room-section section picture img{
-  width: 140px;
-  height: 140px;
-  border-radius: 10px;
-}
-
-.room-section section button{
-  height: 35px;
-  width: 130px;
-  border-radius: 8px;
-  color: white;
-  background-color: #81533C;
-  font-weight: bold;
-}
-
-
-
 /* for calendar only */
 .ognoo_songoh_heseg {
   display: flex;
