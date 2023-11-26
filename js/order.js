@@ -1,37 +1,53 @@
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-            
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth', // Display a monthly view
-            events: [
-                {title: 'Event 1', start: '2023-11-01'}
-            ]
+document.addEventListener('DOMContentLoaded', function () {
+    function loadOrdersFromLocalStorage() {
+        return JSON.parse(localStorage.getItem('orders')) || [];
+    }
+
+    function saveOrdersToLocalStorage(orders) {
+        localStorage.setItem('orders', JSON.stringify(orders));
+    }
+
+    function markAsCheckedIn(index) {
+        const orders = loadOrdersFromLocalStorage();
+        orders[index].checkedIn = true;
+        saveOrdersToLocalStorage(orders);
+        displayOrders();
+    }
+
+    function displayOrders() {
+        const orders = loadOrdersFromLocalStorage();
+        const tableContainer = document.querySelector('.policy-table');
+
+        tableContainer.innerHTML = '';
+
+        orders.forEach((order, index) => {
+            if (!order.checkedIn) {
+                const row = document.createElement('div');
+                row.classList.add('policy');
+
+                const button = document.createElement('button');
+                button.classList.add('button');
+                button.textContent = 'Өрөө олгох';
+                button.addEventListener('click', function () {
+                    markAsCheckedIn(index);
+                });
+
+                row.innerHTML = `
+                    <span>${order.roomNumber}</span>
+                    <span>${order.startDate}</span>
+                    <span>${order.endDate}</span>
+                    <span>${order.todayDate}</span>
+                    <span>${order.lastName}</span>
+                    <span>${order.firstName}</span>
+                    <span>${order.phoneNumber}</span>
+                    <span>${order.registrationNumber}</span>
+                `;
+
+                row.appendChild(button);
+                tableContainer.appendChild(row);
+            }
         });
+    }
 
-        calendar.render(); // Render the calendar
-    });
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Set default room number to 201
-        let selectedRoomNumber = '201';
-        document.getElementById('selectedRoom').innerText = selectedRoomNumber;
-
-        // Handle button clicks
-        const roomButtons = document.querySelectorAll('#button-grid button');
-        roomButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                // Update selected room number
-                selectedRoomNumber = this.innerText;
-                document.getElementById('selectedRoom').innerText = selectedRoomNumber;
-
-                // Remove 'selected' class from all buttons
-                roomButtons.forEach(btn => btn.classList.remove('selected'));
-
-                // Add 'selected' class to the clicked button
-                this.classList.add('selected');
-            });
-        });
-
-        // Your other JavaScript code
-    });
+    displayOrders();
+});
