@@ -113,21 +113,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         orders.push(newOrder);
 
-        displayOrderedRooms();
-
         saveOrderToLocalStorage(newOrder);
+
+        alert("Таны захиалга амжилттай бүртгэгдлээ!");
     }
 
-    function displayOrderedRooms() {
-        let orderedRoomsList = document.getElementById("orderedRoomsList");
-        orderedRoomsList.innerHTML = "";
-
-        orders.forEach(order => {
-            let listItem = document.createElement("li");
-            listItem.textContent = `Room ${order.roomNumber}, Start Date: ${order.startDate}, End Date: ${order.endDate}, Name: ${order.firstName} ${order.lastName}, Phone: ${order.phoneNumber}, Registration Number: ${order.registrationNumber}`;
-            orderedRoomsList.appendChild(listItem);
-        });
-    }
 
     function saveOrderToLocalStorage(order) {
         let storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
@@ -137,11 +127,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     orders = loadOrdersFromLocalStorage();
 
-    displayOrderedRooms();
-
     document.getElementById("orderButton").addEventListener("click", handleOrderButtonClick);
 
     function loadOrdersFromLocalStorage() {
         return JSON.parse(localStorage.getItem('orders')) || [];
     }
 });
+
