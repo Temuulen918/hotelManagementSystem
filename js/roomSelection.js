@@ -28,18 +28,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const startDateInput = document.getElementById('startDateInput');
     const endDateInput = document.getElementById('endDateInput');
 
-    startDateInput.addEventListener('input', function () {
-        const today = new Date().toISOString().split('T')[0];
-        if (this.value < today) {
-            this.value = today;
-        }
 
-        endDateInput.min = this.value;
+startDateInput.addEventListener('input', function () {
+    const today = new Date().toISOString().split('T')[0];
+    if (this.value < today) {
+        this.value = today;
+    }
+});
 
-        if (endDateInput.value < this.value) {
-            endDateInput.value = this.value;
-        }
-    });
+endDateInput.addEventListener('input', function () {
+    const startDate = new Date(startDateInput.value);
+    const endDate = new Date(this.value);
+
+    if (endDate <= startDate) {
+        endDate.setDate(startDate.getDate() + 1);
+        this.value = endDate.toISOString().split('T')[0];
+    }
+});
 
     const lnameInput = document.getElementById('lname');
     const phoneInput = document.getElementById('phone');
