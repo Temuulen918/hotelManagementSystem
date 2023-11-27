@@ -99,6 +99,7 @@
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+
 .edit-button {
     position: absolute;
     top: 10px;
@@ -111,27 +112,71 @@
     border-radius: 5px;
 }
 
+      
 .name {
     background-color: #fff;
     font-size: 16px;
     margin: 10px 50px;
 }
 
-.right p{
+.right p {
     margin: 5px 30px;
     color: #000000ab;
     background-color: #fff;
     font-size: 13px;
 }
-    
+.right strong {
+    background-color: #fff;
+}
+
+.right span {
+    background-color: #fff;
+}
+
 .additional-info {
     display: none;
     text-align: left;
 }
 
-.edit-section {
+/*popupiin heseg*/
+.popup {
     display: none;
-    text-align: left;
-    margin-top: 20px;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+ }
 
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.popup-content label{
+    background-color: #fff;
+}
+.popup-content h2{
+    background-color: #fff;
+}
+.close-button {
+    background-color: #81533C;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.save-button {
+    background-color: #81533C;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
