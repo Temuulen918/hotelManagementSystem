@@ -28,18 +28,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const startDateInput = document.getElementById('startDateInput');
     const endDateInput = document.getElementById('endDateInput');
 
-    startDateInput.addEventListener('input', function () {
-        const today = new Date().toISOString().split('T')[0];
-        if (this.value < today) {
-            this.value = today;
-        }
 
-        endDateInput.min = this.value;
+startDateInput.addEventListener('input', function () {
+    const today = new Date().toISOString().split('T')[0];
+    if (this.value < today) {
+        this.value = today;
+    }
+});
 
-        if (endDateInput.value < this.value) {
-            endDateInput.value = this.value;
-        }
-    });
+endDateInput.addEventListener('input', function () {
+    const startDate = new Date(startDateInput.value);
+    const endDate = new Date(this.value);
+
+    if (endDate <= startDate) {
+        endDate.setDate(startDate.getDate() + 1);
+        this.value = endDate.toISOString().split('T')[0];
+    }
+});
 
     const lnameInput = document.getElementById('lname');
     const phoneInput = document.getElementById('phone');
@@ -113,21 +118,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         orders.push(newOrder);
 
-        displayOrderedRooms();
-
         saveOrderToLocalStorage(newOrder);
+
+        alert("Таны захиалга амжилттай бүртгэгдлээ!");
     }
 
-    function displayOrderedRooms() {
-        let orderedRoomsList = document.getElementById("orderedRoomsList");
-        orderedRoomsList.innerHTML = "";
-
-        orders.forEach(order => {
-            let listItem = document.createElement("li");
-            listItem.textContent = `Room ${order.roomNumber}, Start Date: ${order.startDate}, End Date: ${order.endDate}, Name: ${order.firstName} ${order.lastName}, Phone: ${order.phoneNumber}, Registration Number: ${order.registrationNumber}`;
-            orderedRoomsList.appendChild(listItem);
-        });
-    }
 
     function saveOrderToLocalStorage(order) {
         let storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
@@ -137,11 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     orders = loadOrdersFromLocalStorage();
 
-    displayOrderedRooms();
-
     document.getElementById("orderButton").addEventListener("click", handleOrderButtonClick);
 
     function loadOrdersFromLocalStorage() {
         return JSON.parse(localStorage.getItem('orders')) || [];
     }
 });
+

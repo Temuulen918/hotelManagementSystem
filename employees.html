@@ -19,7 +19,7 @@
                 <li><a href="index.html"><i class="fas fa-house"></i></a></li>
                 <li><a href="order.html"><i class="fas fa-bed"></i></a></li>
                 <li><a href="payment.html"><i class="fa-solid fa-credit-card"></i></a></li>
-                <li><a href="employees.html"><i class="fas fa-users"></i></a></li>
+                <li><a href="employees.html"><i class="fas fa-users" style="color:#CA7F5F"></i></a></li>
                 <li><a href="rooms.html"><i class="fas fa-hotel"></i></a></li>
             </ul>
         </nav>
@@ -27,7 +27,7 @@
             <a href="login.html"><i class="fa-solid fa-user"></i></a>
         </div>
     </header>
-    <main>
+     <main>
         <div class="nemelt">
             <div class="search_box">
                 <i class="fa fa-search"></i>
@@ -36,219 +36,364 @@
             </div>
             <button class="button_emp_nemeh" role="button">Ажилтан нэмэх</button>
         </div>
+
         <div class="container">
-            <section class="profile-card">
+        <!--1 dehi-->
+            <section class="profile-card" id="employeeCard1">
                 <div class="left">
                     <img src="photos/employee.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup1')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName1">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId1">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition1">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn1">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone1"  pattern="[0-9]{6}-[0-9]{6}" >99558877</span></p>
                 </div>
             </section>
-            </section>
-            <section class="edit-section" id="edit-section">
-                <h2>Ажилтаны мэдээлэл засварлах</h2>
-                <label for="edit-name">Ажилтны дугаар:</label>
-                <input type="text" id="edit-name">
-                <label for="edit-position">Албан тушаал:</label>
-                <input type="text" id="edit-position">
-                <label for="edit-email">Регистерийн дугаар:</label>
-                <input type="email" id="edit-email">
-                <label for="edit-phone">Утасны дугаар:</label>
-                <input type="tel" id="edit-phone">
-                <button class="save-button" id="save-button">Save</button>
-            </section>
-
-            <section class="profile-card">
+        <!--2 dahi-->
+            <section class="profile-card" id="employeeCard2">
                 <div class="left">
                     <img src="photos/employee1.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup2')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName2">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId2">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition2">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn2">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone2">99558877</span></p>
                 </div>
             </section>
-            </section>
-            <section class="edit-section" id="edit-section">
-                <h2>Ажилтаны мэдээлэл засварлах</h2>
-                <label for="edit-name">Ажилтны дугаар:</label>
-                <input type="text" id="edit-name">
-                <label for="edit-position">Албан тушаал:</label>
-                <input type="text" id="edit-position">
-                <label for="edit-email">Регистерийн дугаар:</label>
-                <input type="email" id="edit-email">
-                <label for="edit-phone">Утасны дугаар:</label>
-                <input type="tel" id="edit-phone">
-                <button class="save-button" id="save-button">Save</button>
-            </section>
-
-            <section class="profile-card">
+        <!--3 dahi-->
+            <section class="profile-card" id="employeeCard3">
+                <div class="left">
+                    <img src="photos/employee4.jpg" alt="employee img" class="employee_img">
+                </div>
+                <div class="right">
+                    <button class="edit-button" onclick="openPopup('editPopup3')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName3">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId3">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition3">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn3">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone3">99558877</span></p>
+                </div>
+            </section>  
+        <!--4 dahi-->
+            <section class="profile-card" id="employeeCard4">
                 <div class="left">
                     <img src="photos/employee2.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup4')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName4">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId4">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition4">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn4">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone4">99558877</span></p>
                 </div>
             </section>
-        
-            <section class="profile-card">
+        <!--5 dahi-->
+            <section class="profile-card" id="employeeCard5">
                 <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
+                    <img src="photos/employee3.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup5')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName5">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId5">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition5">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn5">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone5">99558877</span></p>
                 </div>
             </section>
-
-            <section class="profile-card">
+        <!--6 dahi-->
+            <section class="profile-card" id="employeeCard6">
                 <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
+                    <img src="photos/employee1.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup6')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName6">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId6">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition6">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn6">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone6">99558877</span></p>
                 </div>
             </section>
-
-            <section class="profile-card">
+        <!--7 dahi-->
+            <section class="profile-card" id="employeeCard7">
                 <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
+                    <img src="photos/employee4.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup7')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName7">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId7">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition7">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn7">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone7">99558877</span></p>
                 </div>
             </section>
-
-            <section class="profile-card">
+        <!--8 dahi-->
+            <section class="profile-card" id="employeeCard8">
                 <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
+                    <img src="photos/employee1.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup8')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName8">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId8">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition8">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn8">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone8">99558877</span></p>
                 </div>
             </section>
- 
-            <section class="profile-card">
+        <!--9 dahi-->
+            <section class="profile-card" id="employeeCard9">
                 <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
+                    <img src="photos/employee4.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup9')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName9">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId9">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition9">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn9">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone9">99558877</span></p>
                 </div>
             </section>
-
-            <section class="profile-card">
+        <!--10 dahi-->
+            <section class="profile-card" id="employeeCard10">
                 <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
+                    <img src="photos/employee3.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup10')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName10">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId10">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition10">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn10">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone10">99558877</span></p>
                 </div>
             </section>
-
-            <section class="profile-card">
+        <!--11 dahi-->
+            <section class="profile-card" id="employeeCard11">
                 <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
+                    <img src="photos/employee1.jpg" alt="employee img" class="employee_img">
                 </div>
                 <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
+                    <button class="edit-button" onclick="openPopup('editPopup11')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName11">Жаргал Оюун</h2>
+                    <p><strong>Ажилтны дугаар:</strong> <span id="employeeId11">Хүлээн авагч</span></p>
+                    <p><strong>Албан тушаал:</strong> <span id="employeePosition11">B001</span></p>
+                    <p><strong>Регистерийн дугаар:</strong> <span id="employeeSsn11">Хүлээн авагч</span></p>
+                    <p><strong>Утасны дугаар:</strong> <span id="employeePhone11">99558877</span></p>
                 </div>
             </section>
-
-            <section class="profile-card">
-                <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
-                </div>
-                <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
-                </div>
-            </section>
-
-            <section class="profile-card">
-                <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
-                </div>
-                <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
-                </div>
-            </section>
-            <section class="profile-card">
-                <div class="left">
-                    <img src="photos/employee.jpg" alt="employee img" class="employee_img">
-                </div>
-                <div class="right">
-                    <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i></button>
-                    <h2 class="name">Жаргал Оюун</h2>
-                    <p class="id">Ажилтны дугаар: BB001</p>
-                    <p class="position">Албан тушаал: Хүлээн авагч</p>
-                    <p class="ssn">Регистерийн дугаар: ЗД00012210</p>
-                    <p class="phone">Утасны дугаар: 99554455</p>
-                </div>
-            </section>
-
         </div>
-        <script src="employee.js"></script>
 
-</main>
+    <!-- popup  -->
+        <div class="popup" id="editPopup1">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName1">Нэр:</label>
+                <input type="text" id="editName1">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId1">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition1">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn1">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone1"  maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard1', 'editPopup1')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup1')">Гарах</button>
+            </div>
+        </div>
+        
+        <div class="popup" id="editPopup2">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName2">Нэр:</label>
+                <input type="text" id="editName2">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId2">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition2">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn2">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone2" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard2', 'editPopup2')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup2')">Гарах</button>
+            </div>
+        </div>
 
+        <div class="popup" id="editPopup3">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName3">Нэр:</label>
+                <input type="text" id="editName3">
+                <label for="editId3">Ажилтны дугаар:</label>
+                <input type="text" id="editId3">
+                <label for="editPosition3">Албан тушаал:</label>
+                <input type="text" id="editPosition3">
+                <label for="editSsn3">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn3">
+                <label for="editPhone3">Утасны дугаар:</label>
+                <input type="email" id="editPhone3" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard3', 'editPopup3')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup3')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup4">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName4">Нэр:</label>
+                <input type="text" id="editName4">
+                <label for="editId4">Ажилтны дугаар:</label>
+                <input type="text" id="editId4">
+                <label for="editPosition4">Албан тушаал:</label>
+                <input type="text" id="editPosition4">
+                <label for="editSsn4">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn4">
+                <label for="editPhone4">Утасны дугаар:</label>
+                <input type="email" id="editPhone4" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard4', 'editPopup4')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup4')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup5">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName5">Нэр:</label>
+                <input type="text" id="editName5">
+                <label for="editId5">Ажилтны дугаар:</label>
+                <input type="text" id="editId5">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition5">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="ssn" id="editSsn5">
+                <label for="editPhone5">Утасны дугаар:</label>
+                <input type="email" id="editPhone5" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard5', 'editPopup5')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup5')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup6">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName6">Нэр:</label>
+                <input type="text" id="editName6">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId6">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition6">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn6">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone6" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard6', 'editPopup6')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup6')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup7">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName2">Нэр:</label>
+                <input type="text" id="editName7">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId7">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition7">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn7">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone7" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard7', 'editPopup7')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup7')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup8">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName8">Нэр:</label>
+                <input type="text" id="editName8">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId8">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition8">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn8">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone8" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard8', 'editPopup8')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup8')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup9">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName2">Нэр:</label>
+                <input type="text" id="editName9">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId9">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition9">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn9">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone9" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard9', 'editPopup9')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup9')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup10">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName2">Нэр:</label>
+                <input type="text" id="editName10">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId10">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition10">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn10">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone10" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard10', 'editPopup10')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup10')">Гарах</button>
+            </div>
+        </div>
+
+        <div class="popup" id="editPopup11">
+            <div class="popup-content">
+                <h2>Ажилтны мэдээлэл засварлах</h2>
+                <label for="editName2">Нэр:</label>
+                <input type="text" id="editName11">
+                <label for="editId1">Ажилтны дугаар:</label>
+                <input type="text" id="editId11">
+                <label for="editPosition1">Албан тушаал:</label>
+                <input type="text" id="editPosition11">
+                <label for="editSsn1">Регистерийн дугаар:</label>
+                <input type="email" id="editSsn11">
+                <label for="editPhone1">Утасны дугаар:</label>
+                <input type="email" id="editPhone11" maxlength="8">
+                <button class="save-button" onclick="saveChanges('employeeCard11', 'editPopup11')">Хадгалах</button>
+                <button class="close-button" onclick="closePopup('editPopup11')">Гарах</button>
+            </div>
+        </div>
+        <script src="js/employee.js"></script>
+    </main>
     <footer>
         <div class="foot">
             <label><i class="fa-solid fa-phone"></i>+976 99777454</label> 
