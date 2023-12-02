@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Hotel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link rel="stylesheet" href="employee2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <a><i class="fa-solid fa-earth-americas"></i> My Hotel</a>
+        </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-house"></i></a></li>
+                <li><a href="order.html"><i class="fas fa-bed"></i></a></li>
+                <li><a href="payment.html"><i class="fa-solid fa-credit-card"></i></a></li>
+                <li><a href="employees.html"><i class="fas fa-users"></i></a></li>
+                <li><a href="rooms.html"><i class="fas fa-hotel"></i></a></li>
+            </ul>
+        </nav>
+        <div id="account">
+            <a href="login.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="nemelt">
+            <div class="search_box">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="Хайх зүйлээ оруулна уу..." />
+                <button class="button">Хайх</button>
+            </div>
+            <button class="button_emp_nemeh" role="button">Ажилтан нэмэх</button>
+        </div>
+
+        <div class="container">
+        <!--1 dehi-->
+            <section class="profile-card" id="employeeCard1">
+                <div class="left">
+                    <img src="photos/kingRoom.jpg" alt="employee img" class="employee_img">
+                </div>
+                <div class="right">
+                    <button class="edit-button" onclick="openPopup('editPopup1')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="roomType1">King өрөө</h2>
+                    <p><strong>Өрөөний дугаар:</strong> <span id="roomNumber1">200, 201, 202, 203</span></p>
+                    <p><strong>Өрөөний нэр:</strong> <span id="roomName1">Кинг</span></p>
+                    <p><strong>Дэлгэрэнгүй:</strong> <span id="roomMore1">Манай зочид буудлын Стандарт өрөөнд байрлах үнэд олон улсын буффет маягийн өглөөний зоог багтдаг бөгөөд, 24н цагийн сэрээх үйлчилгээ</span></p>
+                </div>
+            </section>
+        <!--2 dahi-->
+            <section class="profile-card" id="employeeCard2">
+                <div class="left">
+                    <img src="photos/queenRoom.jpg" alt="employee img" class="employee_img">
+                </div>
+                <div class="right">
+                    <button class="edit-button" onclick="openPopup('editPopup2')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName2">Queen өрөө</h2>
+                    <p><strong>Өрөөний дугаар:</strong> <span id="roomNum2">200, 201, 202, 203</span></p>
+                    <p><strong>Өрөөний нэр:</strong> <span id="employeePosition2">Кинг</span></p>
+                    <p><strong>Дэлгэрэнгүй:</strong> <span id="employeeSsn2">Манай зочид буудлын Стандарт өрөөнд байрлах үнэд олон улсын буффет маягийн өглөөний зоог багтдаг бөгөөд, 24н цагийн сэрээх үйлчилгээ</span></p>
+                </div>
+            </section>
+        <!--3 dahi-->
+            <section class="profile-card" id="employeeCard3">
+                <div class="left">
+                    <img src="photos/luxRoom.jpg" alt="employee img" class="employee_img">
+                </div>
+                <div class="right">
+                    <button class="edit-button" onclick="openPopup('editPopup3')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName3">Lux өрөө</h2>
+                    <p><strong>Өрөөний дугаар:</strong> <span id="employeeId1">200, 201, 202, 203</span></p>
+                    <p><strong>Өрөөний нэр:</strong> <span id="employeePosition1">Кинг</span></p>
+                    <p><strong>Дэлгэрэнгүй:</strong> <span id="employeeSsn1">Манай зочид буудлын Стандарт өрөөнд байрлах үнэд олон улсын буффет маягийн өглөөний зоог багтдаг бөгөөд, 24н цагийн сэрээх үйлчилгээ</span></p>
+                </div>
+            </section>  
+        <!--4 dahi-->
+            <section class="profile-card" id="employeeCard4">
+                <div class="left">
+                    <img src="photos/doubleRoom.jpg" alt="employee img" class="employee_img">
+                </div>
+                <div class="right">
+                    <button class="edit-button" onclick="openPopup('editPopup4')"><i class="fas fa-edit"></i></button>
+                    <h2 class="name" id="employeeName4">Double өрөө</h2>
+                    <p><strong>Өрөөний дугаар:</strong> <span id="employeeId1">200, 201, 202, 203</span></p>
+                    <p><strong>Өрөөний нэр:</strong> <span id="employeePosition1">Кинг</span></p>
+                    <p><strong>Дэлгэрэнгүй:</strong> <span id="employeeSsn1">Манай зочид буудлын Стандарт өрөөнд байрлах үнэд олон улсын буффет маягийн өглөөний зоог багтдаг бөгөөд, 24н цагийн сэрээх үйлчилгээ</span></p>
+                </div>
+            </section>
+
+        <!-- popup  -->
+            <div class="popup" id="editPopup1">
+                <div class="popup-content">
+                    <h2>Өрөөний мэдээлэл засварлах</h2>
+                    <label for="editType1">Өрөөний төрөл :</label>
+                    <input type="text" id="editType1">
+                    <label for="editNumber1">Өрөөний дугаар:</label>
+                    <input type="text" id="editNumber1">
+                    <label for="editPosition1">Өрөөний нэр:</label>
+                    <input type="text" id="editName1">
+                    <label for="editSsn1">Дэлгэрэнгүй:</label>
+                    <input type="email" id="editMore1">
+                    <button class="save-button" onclick="saveChanges('employeeCard1', 'editPopup1')">Хадгалах</button>
+                    <button class="close-button" onclick="closePopup('editPopup1')">Гарах</button>
+                </div>
+            </div>
+            
+            <div class="popup" id="editPopup2">
+                <div class="popup-content">
+                    <h2>Ажилтны мэдээлэл засварлах</h2>
+                    <label for="editName2">Нэр:</label>
+                    <input type="text" id="editName2">
+                    <label for="editId1">Ажилтны дугаар:</label>
+                    <input type="text" id="editId2">
+                    <label for="editPosition1">Албан тушаал:</label>
+                    <input type="text" id="editPosition2">
+                    <label for="editSsn1">Регистерийн дугаар:</label>
+                    <input type="email" id="editSsn2">
+                    <label for="editPhone1">Утасны дугаар:</label>
+                    <input type="email" id="editPhone2" maxlength="8">
+                    <button class="save-button" onclick="saveChanges('employeeCard2', 'editPopup2')">Хадгалах</button>
+                    <button class="close-button" onclick="closePopup('editPopup2')">Гарах</button>
+                </div>
+            </div>
+
+            <div class="popup" id="editPopup3">
+                <div class="popup-content">
+                    <h2>Ажилтны мэдээлэл засварлах</h2>
+                    <label for="editName3">Нэр:</label>
+                    <input type="text" id="editName3">
+                    <label for="editId3">Ажилтны дугаар:</label>
+                    <input type="text" id="editId3">
+                    <label for="editPosition3">Албан тушаал:</label>
+                    <input type="text" id="editPosition3">
+                    <label for="editSsn3">Регистерийн дугаар:</label>
+                    <input type="email" id="editSsn3">
+                    <label for="editPhone3">Утасны дугаар:</label>
+                    <input type="email" id="editPhone3" maxlength="8">
+                    <button class="save-button" onclick="saveChanges('employeeCard3', 'editPopup3')">Хадгалах</button>
+                    <button class="close-button" onclick="closePopup('editPopup3')">Гарах</button>
+                </div>
+            </div>
+
+            <div class="popup" id="editPopup4">
+                <div class="popup-content">
+                    <h2>Ажилтны мэдээлэл засварлах</h2>
+                    <label for="editName4">Нэр:</label>
+                    <input type="text" id="editName4">
+                    <label for="editId4">Ажилтны дугаар:</label>
+                    <input type="text" id="editId4">
+                    <label for="editPosition4">Албан тушаал:</label>
+                    <input type="text" id="editPosition4">
+                    <label for="editSsn4">Регистерийн дугаар:</label>
+                    <input type="email" id="editSsn4">
+                    <label for="editPhone4">Утасны дугаар:</label>
+                    <input type="email" id="editPhone4" maxlength="8">
+                    <button class="save-button" onclick="saveChanges('employeeCard4', 'editPopup4')">Хадгалах</button>
+                    <button class="close-button" onclick="closePopup('editPopup4')">Гарах</button>
+                </div>
+            </div>
+        </div>
+        <script src="room.js"></script>
+    </main>
+
+    <footer>
+        <div class="foot">
+            <label><i class="fa-solid fa-phone"></i>+976 99777454</label> 
+            <label><i class="fa-solid fa-phone"></i>+976 99400682</label> 
+        </div>
+        <div class="foot">
+            <label><i class="fa-solid fa-envelope"></i> 19B1NUM2222@stud.num.edu.mn</label>
+            <label><i class="fa-solid fa-envelope"></i> 20B1NUM0451@stud.num.edu.mn</label>
+        </div>
+        <div class="foot">
+            <label><i class="fa-solid fa-location-dot"></i> Их сургуулийн гудамж - 1, Бага<br>тойруу, Сүхбаатар дүүрэг, Улаанбаатар</label>
+        </div>
+        <div class="foot">
+            <label><i class="fa-brands fa-facebook"></i> https://facebook.com/</label>
+            <label><i class="fa-brands fa-instagram"></i> https://instagram.com/</label>
+        </div>
+    </footer>
+</body>
+</html>
