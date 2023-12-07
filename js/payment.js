@@ -1,17 +1,53 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Zahialga huleen avah hesegt huleen avsan JSON medeellee ene hesegt gargaj uruu olgoh bolomjtoi bolgono
     function loadOrdersFromLocalStorage() {
         return JSON.parse(localStorage.getItem('orders')) || [];
     }
 
-    function markAsCheckedIn(index) {
-        const orders = loadOrdersFromLocalStorage();
-        orders[index].checkedIn = true;
-        localStorage.setItem('orders', JSON.stringify(orders));
-        renderOrders();
+    // Local storaged hadgalsan ugugdluus checked in zahialgiig renderleh 
+    function renderOrders() {
+        const arrOrders = loadOrdersFromLocalStorage();
+        const objDataOutput = document.querySelector('.policy-table');
+
+        objDataOutput.innerHTML = ''; 
+
+        arrOrders.forEach((objOrder) => {
+            if (objOrder.checkedIn) {
+                const objPolicyDiv = document.createElement('div');
+                objPolicyDiv.classList.add('policy');
+
+                const intAmount = calculateAmount(objOrder);
+
+                // Neg zahialgiin HTML
+                objPolicyDiv.innerHTML = `
+                    <span>${objOrder.roomNumber}</span>
+                    <span>${objOrder.startDate}</span>
+                    <span>${objOrder.endDate}</span>
+                    <span>${objOrder.todayDate}</span>
+                    <span>${objOrder.lastName}</span>
+                    <span>${objOrder.firstName}</span>
+                    <span>${objOrder.phoneNumber}</span>
+                    <span>${objOrder.registrationNumber}</span>
+                    <span>${intAmount}</span>
+                `;
+
+                // Checked in zahialguudiin tulbur tuluh button-iig hiine
+                const objButton = document.createElement('button');
+                objButton.classList.add('button');
+                objButton.textContent = 'Төлбөр төлөх';
+
+                // Button-iig HTML dotor oruulna
+                objPolicyDiv.appendChild(objButton);
+                objDataOutput.appendChild(objPolicyDiv);
+            }
+        });
     }
 
-    function calculateAmount(order) {
-        const roomPriceMap = {
+    // Uruunii tootoos hamaaran uniin dun uur baina. 
+    //Tulbur tuluh hesegt uilchluulsen hugatsaa ba uruunii tootoots hamaaran tulbur bodogdono
+    function calculateAmount(objOrder) {
+        const objRoomPriceMap = {
             '201': 120000,
             '202': 120000,
             '203': 120000,
@@ -48,55 +84,17 @@ document.addEventListener('DOMContentLoaded', function () {
             '507': 200000,
             '508': 200000,
             '509': 200000,
+
         };
 
-        const startDate = new Date(order.startDate);
-        const endDate = new Date(order.endDate);
-        const daysStayed = Math.ceil((endDate - startDate) / (24 * 60 * 60 * 1000));
+        const objStartDate = new Date(objOrder.startDate);
+        const objEndDate = new Date(objOrder.endDate);
+        const intDaysStayed = Math.ceil((objEndDate - objStartDate) / (24 * 60 * 60 * 1000));
 
-        const roomPrice = roomPriceMap[order.roomNumber];
-        return daysStayed * roomPrice;
+        const intRoomPrice = objRoomPriceMap[objOrder.roomNumber];
+        return intDaysStayed * intRoomPrice;
     }
 
-    function renderOrders() {
-        const orders = loadOrdersFromLocalStorage();
-        const dataOutput = document.querySelector('.policy-table');
-
-        dataOutput.innerHTML = '';
-
-        orders.forEach((order, index) => {
-            if (order.checkedIn) {
-                const policyDiv = document.createElement('div');
-                policyDiv.classList.add('policy');
-
-                const amount = calculateAmount(order);
-
-                // Render order details
-                // You can customize this part based on your order structure
-                policyDiv.innerHTML = `
-                    <span>${order.roomNumber}</span>
-                    <span>${order.startDate}</span>
-                    <span>${order.endDate}</span>
-                    <span>${order.todayDate}</span>
-                    <span>${order.lastName}</span>
-                    <span>${order.firstName}</span>
-                    <span>${order.phoneNumber}</span>
-                    <span>${order.registrationNumber}</span>
-                    <span>${amount}</span>
-                `;
-
-                const button = document.createElement('button');
-                button.classList.add('button');
-                button.textContent = 'Төлбөр төлөх';
-                button.addEventListener('click', function () {
-                    markAsCheckedIn(index);
-                });
-
-                policyDiv.appendChild(button);
-                dataOutput.appendChild(policyDiv);
-            }
-        });
-    }
-
+    // 
     renderOrders();
 });

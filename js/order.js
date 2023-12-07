@@ -1,53 +1,60 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Zahialga huleen avah hesegt huleen avsan JSON medeellee ene hesegt gargaj uruu olgoh bolomjtoi bolgono
     function loadOrdersFromLocalStorage() {
         return JSON.parse(localStorage.getItem('orders')) || [];
     }
 
-    function saveOrdersToLocalStorage(orders) {
-        localStorage.setItem('orders', JSON.stringify(orders));
+    // Shinechilsen array-gaa local storaged hadgalahdaa ashiglana
+    function saveOrdersToLocalStorage(arrOrders) {
+        localStorage.setItem('orders', JSON.stringify(arrOrders));
     }
 
-    function markAsCheckedIn(index) {
-        const orders = loadOrdersFromLocalStorage();
-        orders[index].checkedIn = true;
-        saveOrdersToLocalStorage(orders);
+    // Uruu olgoh tovchiig darah ued checked in-iig true bolgohoor duudna
+    function markAsCheckedIn(intIndex) {
+        const arrOrders = loadOrdersFromLocalStorage();
+        arrOrders[intIndex].checkedIn = true;
+        saveOrdersToLocalStorage(arrOrders);
         displayOrders();
     }
 
+    // Local storage-d baigaa zahialgiin medeelliig render hiij, olgoson uruug HTML-ees hasah uildel hiine
     function displayOrders() {
-        const orders = loadOrdersFromLocalStorage();
-        const tableContainer = document.querySelector('.policy-table');
+        const arrOrders = loadOrdersFromLocalStorage();
+        const objTableContainer = document.querySelector('.policy-table');
 
-        tableContainer.innerHTML = '';
+        objTableContainer.innerHTML = ''; 
 
-        orders.forEach((order, index) => {
-            if (!order.checkedIn) {
-                const row = document.createElement('div');
-                row.classList.add('policy');
+        arrOrders.forEach((objOrder, intIndex) => {
+            if (!objOrder.checkedIn) {
+                const objRow = document.createElement('div');
+                objRow.classList.add('policy');
 
-                const button = document.createElement('button');
-                button.classList.add('button');
-                button.textContent = 'Өрөө олгох';
-                button.addEventListener('click', function () {
-                    markAsCheckedIn(index);
+                // Uruu olgoh tovchluuriig uusgej daragdsan ued ni tuhain zahialgiig HTML-ees hasah uildel hiine
+                const objButton = document.createElement('button');
+                objButton.classList.add('button');
+                objButton.textContent = 'Өрөө олгох';
+                objButton.addEventListener('click', function () {
+                    markAsCheckedIn(intIndex);
                 });
 
-                row.innerHTML = `
-                    <span>${order.roomNumber}</span>
-                    <span>${order.startDate}</span>
-                    <span>${order.endDate}</span>
-                    <span>${order.todayDate}</span>
-                    <span>${order.lastName}</span>
-                    <span>${order.firstName}</span>
-                    <span>${order.phoneNumber}</span>
-                    <span>${order.registrationNumber}</span>
+                // Zahialgiin HTML butets
+                objRow.innerHTML = `
+                    <span>${objOrder.roomNumber}</span>
+                    <span>${objOrder.startDate}</span>
+                    <span>${objOrder.endDate}</span>
+                    <span>${objOrder.todayDate}</span>
+                    <span>${objOrder.lastName}</span>
+                    <span>${objOrder.firstName}</span>
+                    <span>${objOrder.phoneNumber}</span>
+                    <span>${objOrder.registrationNumber}</span>
                 `;
 
-                row.appendChild(button);
-                tableContainer.appendChild(row);
+                // Zahialgiin medeelliig HTML-d zurj baina
+                objRow.appendChild(objButton);
+                objTableContainer.appendChild(objRow);
             }
         });
     }
-
     displayOrders();
 });

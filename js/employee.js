@@ -1,36 +1,50 @@
-function openPopup(popupId) {
-    document.getElementById(popupId).style.display = 'flex';
-    const employeeId = popupId.replace('editPopup', '');
-    const currentName = document.getElementById(`employeeName${employeeId}`).innerText;
-    const currentId = document.getElementById(`employeeId${employeeId}`).innerText;
-    const currentPosition = document.getElementById(`employeePosition${employeeId}`).innerText;
-    const currentSsn = document.getElementById(`employeeSsn${employeeId}`).innerText;
-    const currentPhone = document.getElementById(`employeePhone${employeeId}`).innerText;
+function openPopup(strPopupId) {
+    // Display the specified popup
+    document.getElementById(strPopupId).style.display = 'flex';
 
-    document.getElementById(`editName${employeeId}`).value = currentName;
-    document.getElementById(`editId${employeeId}`).value = currentId;
-    document.getElementById(`editPosition${employeeId}`).value = currentPosition;
-    document.getElementById(`editSsn${employeeId}`).value = currentSsn;
-    document.getElementById(`editPhone${employeeId}`).value = currentPhone;
+    // Extract the employee ID from the popup ID
+    const strEmployeeId = strPopupId.replace('editPopup', '');
+
+    // Retrieve current employee data from the corresponding HTML elements
+    const strCurrentName = document.getElementById(`employeeName${strEmployeeId}`).innerText;
+    const strCurrentId = document.getElementById(`employeeId${strEmployeeId}`).innerText;
+    const strCurrentPosition = document.getElementById(`employeePosition${strEmployeeId}`).innerText;
+    const strCurrentSsn = document.getElementById(`employeeSsn${strEmployeeId}`).innerText;
+    const strCurrentPhone = document.getElementById(`employeePhone${strEmployeeId}`).innerText;
+
+    // Populate the input fields in the popup with the current employee data
+    document.getElementById(`editName${strEmployeeId}`).value = strCurrentName;
+    document.getElementById(`editId${strEmployeeId}`).value = strCurrentId;
+    document.getElementById(`editPosition${strEmployeeId}`).value = strCurrentPosition;
+    document.getElementById(`editSsn${strEmployeeId}`).value = strCurrentSsn;
+    document.getElementById(`editPhone${strEmployeeId}`).value = strCurrentPhone;
 }
 
-function saveChanges(cardId, popupId) {
-    const employeeId = popupId.replace('editPopup', '');
-    const newName = document.getElementById(`editName${employeeId}`).value;
-    const newId = document.getElementById(`editId${employeeId}`).value;
-    const newPosition = document.getElementById(`editPosition${employeeId}`).value;
-    const newSsn = document.getElementById(`editSsn${employeeId}`).value;
-    const newPhone = document.getElementById(`editPhone${employeeId}`).value;
+// Function to save changes made in a popup and update the corresponding employee card
+function saveChanges(strCardId, strPopupId) {
+    // Extract the employee ID from the popup ID
+    const strEmployeeId = strPopupId.replace('editPopup', '');
 
-    document.getElementById(`employeeName${employeeId}`).innerText = newName;
-    document.getElementById(`employeeId${employeeId}`).innerText = newId;
-    document.getElementById(`employeePosition${employeeId}`).innerText = newPosition;
-    document.getElementById(`employeeSsn${employeeId}`).innerText = newSsn;
-    document.getElementById(`employeePhone${employeeId}`).innerText = newPhone;
+    // Retrieve the new data entered in the popup input fields
+    const strNewName = document.getElementById(`editName${strEmployeeId}`).value;
+    const strNewId = document.getElementById(`editId${strEmployeeId}`).value;
+    const strNewPosition = document.getElementById(`editPosition${strEmployeeId}`).value;
+    const strNewSsn = document.getElementById(`editSsn${strEmployeeId}`).value;
+    const strNewPhone = document.getElementById(`editPhone${strEmployeeId}`).value;
 
-    closePopup(popupId);
+    // Update the corresponding employee card with the new data
+    document.getElementById(`employeeName${strEmployeeId}`).innerText = strNewName;
+    document.getElementById(`employeeId${strEmployeeId}`).innerText = strNewId;
+    document.getElementById(`employeePosition${strEmployeeId}`).innerText = strNewPosition;
+    document.getElementById(`employeeSsn${strEmployeeId}`).innerText = strNewSsn;
+    document.getElementById(`employeePhone${strEmployeeId}`).innerText = strNewPhone;
+
+    // Close the popup after saving changes
+    closePopup(strPopupId);
 }
 
-function closePopup(popupId) {
-    document.getElementById(popupId).style.display = 'none';
+// Function to close a popup
+function closePopup(strPopupId) {
+    // Hide the specified popup
+    document.getElementById(strPopupId).style.display = 'none';
 }
