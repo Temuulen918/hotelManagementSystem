@@ -155,4 +155,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Zahialah tovchluuriig hereglegch darah ued 
     document.getElementById("orderButton").addEventListener("click", handleOrderButtonClick);
+
+
+
+    // Hereglegch zahialgaa batalgaajuulaagui ued zahialgiig browser deer tur hadgalj ugnu
+    function saveOrderData() {
+        var orderData = {
+            startDate: startDateInput.value,
+            endDate: endDateInput.value,
+            lastName: lnameInput.value,
+            phone: phoneInput.value,
+            firstName: fnameInput.value,
+            registerNo: registerNoInput.value
+        };
+    
+        localStorage.setItem('orderData', JSON.stringify(orderData));
+    }
+    
+    // Hereglegch zahialah tovchluur darsan ued tur hadgalsan zahialgiin medeellee ustgana
+    function clearOrderData() {
+        localStorage.removeItem('orderData');
+    }
+    
+    // Hereglegch browseroo haagaad ergeed orj ireh ued hadgalagdsan medeelel baigaa esehiig shalgana
+    var storedOrderData = localStorage.getItem('orderData');
+    if (storedOrderData) {
+        var orderData = JSON.parse(storedOrderData);
+        startDateInput.value = orderData.startDate;
+        endDateInput.value = orderData.endDate;
+        lnameInput.value = orderData.lastName;
+        phoneInput.value = orderData.phone;
+        fnameInput.value = orderData.firstName;
+        registerNoInput.value = orderData.registerNo;
+    }
+    
+    // automataar oroltiin ugugduliig hadgalna
+    startDateInput.addEventListener('input', saveOrderData);
+    endDateInput.addEventListener('input', saveOrderData);
+    lnameInput.addEventListener('input', saveOrderData);
+    phoneInput.addEventListener('input', saveOrderData);
+    fnameInput.addEventListener('input', saveOrderData);
+    registerNoInput.addEventListener('input', saveOrderData);
+    
+    // Zahialah tovchluur daragdah ued local storage-d baih tur medeelel ustgana
+    var orderButton = document.getElementById('orderButton');
+
+    orderButton.addEventListener('click', function () {
+        clearOrderData();
+    })
 });

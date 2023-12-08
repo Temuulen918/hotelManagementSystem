@@ -148,3 +148,85 @@ describe("Room Selection App Tests", function () {
   });
   
   
+
+
+
+
+
+
+
+  
+////////////////////////////////////////
+
+describe('isRoomAvailable funtsiin test', () => {
+  beforeEach(() => {
+    // Testiin hamgiin anhnii zahialgiin medeelel
+    arrOrders = [new Order('201', '2023-11-01', '2023-11-10', '2023-12-08', 'Doe', 'John', '12345678', 'A12345')];
+  });
+
+  // Ehnii zahialgatai dahvarduulalgui dahin zahialga ugch uziye
+  it('Herev songogdson hugatsaand tus uruug zahialah bolomjtoi bol "true" utga butsaana', () => {
+    const result = isRoomAvailable('202', '2023-11-15', '2023-11-20');
+    expect(result).toBe(true);
+  }); 
+
+  // Ehnii zahialgatai zavharduulan zahialga ugch uziye
+  it('Herev songogdson hugatsaand tus uruug zahialah bolomjgui bol "false" utga butsaana', () => {
+    const result = isRoomAvailable('201', '2023-11-05', '2023-11-08');
+    expect(result).toBe(false);
+  });
+});
+
+describe('handleOrderButtonClick funktsiin test', () => {
+  beforeEach(() => {
+    // Testiin shine zahialgiin medeelel
+    arrOrders = [new Order('201', '2023-11-01', '2023-11-10', '2023-12-08', 'Doe', 'John', '12345678', 'A12345')];
+  });
+
+  it('Herev zahialga amjilttai bolson bol local storaged hadgalah ystoi', () => {
+    // Local storage-d shine zahialga nemegdehees umnu zahialga burtgesen baiy
+    document.getElementById('selectedRoom').innerText = '202';
+    document.getElementById('startDateInput').value = '2023-11-15';
+    document.getElementById('endDateInput').value = '2023-11-20';
+    document.getElementById('lname').value = 'Smith';
+    document.getElementById('fname').value = 'Jane';
+    document.getElementById('phone').value = '87654321';
+    document.getElementById('registerNo').value = 'B67890';
+
+    spyOn(window, 'alert');
+
+    // Funktsee duudna
+    handleOrderButtonClick();
+
+    // Shine zahialga array-d nemegdsen esehiig shalgana
+    expect(arrOrders.length).toBe(2);
+
+    // Shine zahialga local storage-d nemegdsen esehiig shalgana
+    const storedOrders = JSON.parse(localStorage.getItem('orders'));
+    expect(storedOrders.length).toBe(2);
+
+    // Alert message zuv utgiig haruulj baigaa esehiig shalgana
+    expect(window.alert).toHaveBeenCalledWith('Таны захиалга амжилттай бүртгэгдлээ!');
+  });
+
+  it('Herev zahialga amjiltgui bolson bol local storage-d hadgalalgui alert message haruulah ystoi', () => {
+    // Buren bus zahialgiin medeelel beltgene
+    document.getElementById('selectedRoom').innerText = '201';
+    document.getElementById('startDateInput').value = '2023-11-05';
+    document.getElementById('endDateInput').value = '2023-11-08';
+
+    spyOn(window, 'alert');
+
+    handleOrderButtonClick();
+
+    // Order array-d tus zahialga nemegdsen esehiig shalgana
+    expect(arrOrders.length).toBe(1);
+
+    // Tus tsutslagdsan zahialga local storage-d hadgalagdsan esehiig shalgana
+    const storedOrders = JSON.parse(localStorage.getItem('orders'));
+    expect(storedOrders.length).toBe(1);
+
+    // Alert message zuv utgiig haruulj baigaa esehiig shalgana
+    expect(window.alert).toHaveBeenCalledWith('Өрөө 201 нь сонгогдсон хугацаанд захиалгатай байна.');
+  });
+});
