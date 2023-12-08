@@ -1,18 +1,19 @@
 function openPopup(strPopupId) {
-    // Display the specified popup
+    // Zasah tovch daragdsan ajiltanii medeelel pop up-aar garch irne. Ter boltol display=none baina
     document.getElementById(strPopupId).style.display = 'flex';
 
-    // Extract the employee ID from the popup ID
+    // Pop up-iin ID-gaas heddeh ajiltang zasahiig ylgaj avna
     const strEmployeeId = strPopupId.replace('editPopup', '');
 
-    // Retrieve current employee data from the corresponding HTML elements
+    // Odoogiin ajiltanii medeelliig unshij huvisagchid hadgalna
     const strCurrentName = document.getElementById(`employeeName${strEmployeeId}`).innerText;
     const strCurrentId = document.getElementById(`employeeId${strEmployeeId}`).innerText;
     const strCurrentPosition = document.getElementById(`employeePosition${strEmployeeId}`).innerText;
     const strCurrentSsn = document.getElementById(`employeeSsn${strEmployeeId}`).innerText;
     const strCurrentPhone = document.getElementById(`employeePhone${strEmployeeId}`).innerText;
 
-    // Populate the input fields in the popup with the current employee data
+    // Ajiltanii odoogiin medeellig huvisagchaas pop up-d huulj haruulna. 
+    //Odoogiin medeelel deer zasvar hiih bolomjtoi bolno
     document.getElementById(`editName${strEmployeeId}`).value = strCurrentName;
     document.getElementById(`editId${strEmployeeId}`).value = strCurrentId;
     document.getElementById(`editPosition${strEmployeeId}`).value = strCurrentPosition;
@@ -20,31 +21,30 @@ function openPopup(strPopupId) {
     document.getElementById(`editPhone${strEmployeeId}`).value = strCurrentPhone;
 }
 
-// Function to save changes made in a popup and update the corresponding employee card
+// Hereglegchiin zasvarlasan ajiltanii medeelliig hadgalna
 function saveChanges(strCardId, strPopupId) {
-    // Extract the employee ID from the popup ID
+    // Pop up-iin ID-gaas heddeh ajiltang zasahiig ylgaj avna
     const strEmployeeId = strPopupId.replace('editPopup', '');
 
-    // Retrieve the new data entered in the popup input fields
+    // Odoogiin ajiltanii medeelel deer zasvar hiisnii daraah medeelliig unshij huvisagchid hadgalna
     const strNewName = document.getElementById(`editName${strEmployeeId}`).value;
     const strNewId = document.getElementById(`editId${strEmployeeId}`).value;
     const strNewPosition = document.getElementById(`editPosition${strEmployeeId}`).value;
     const strNewSsn = document.getElementById(`editSsn${strEmployeeId}`).value;
     const strNewPhone = document.getElementById(`editPhone${strEmployeeId}`).value;
 
-    // Update the corresponding employee card with the new data
+    // Huvisagchid hadgalsan shinechilsen ajiltanii medeellee undsen ajiltanii medeelliin hesegt shinechlen tavina
     document.getElementById(`employeeName${strEmployeeId}`).innerText = strNewName;
     document.getElementById(`employeeId${strEmployeeId}`).innerText = strNewId;
     document.getElementById(`employeePosition${strEmployeeId}`).innerText = strNewPosition;
     document.getElementById(`employeeSsn${strEmployeeId}`).innerText = strNewSsn;
     document.getElementById(`employeePhone${strEmployeeId}`).innerText = strNewPhone;
 
-    // Close the popup after saving changes
+    // Shinechilsen medeelel hadgalagdsanii daraa pop up-iig shuud haana
     closePopup(strPopupId);
 }
 
-// Function to close a popup
+// Pop up haah funts
 function closePopup(strPopupId) {
-    // Hide the specified popup
     document.getElementById(strPopupId).style.display = 'none';
 }
